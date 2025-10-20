@@ -1,0 +1,53 @@
+#include "Token.h"
+using namespace std;
+
+Token::Token() {
+    type = TokenType::INVALID;
+    value = "";
+    position = -1;
+}
+
+Token::Token(TokenType t, string v, int p){
+    type = t;
+    value = v;
+    position = p;
+}
+
+// Getter
+TokenType Token::getType() const {
+    return type;
+}
+        
+string Token::getValue() const {
+    return value;
+}
+
+int Token::getPosition() const {
+    return position;
+}
+
+// Helper functions
+string Token::typeToString() const {
+    switch (type) {
+        case TokenType::IDENTIFIER: 
+            return "IDENTIFIER";
+        case TokenType::NUMBER: 
+            return "NUMBER";
+        case TokenType::OPERATOR: 
+            return "OPERATOR";
+        case TokenType::ASSIGNMENT: 
+            return "ASSIGNMENT";
+        case TokenType::PARENTHESIS: 
+            return "PARENTHESIS";
+        case TokenType::TERMINATOR: 
+            return "TERMINATOR";
+        case TokenType::INVALID: 
+            return "INVALID";
+        default: 
+            return "INVALID";
+    }
+}
+
+void Token::display() const {
+    cout << "[" << typeToString() << "]: " << value << "(pos: " << position << ")" << endl;
+}
