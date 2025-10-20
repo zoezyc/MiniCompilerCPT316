@@ -10,7 +10,8 @@ enum class TokenType {
     NUMBER,
     OPERATOR,
     ASSIGNMENT,
-    PARENTHESIS,
+    PARENTHESIS_L,
+    PARENTHESIS_R,
     TERMINATOR,
     INVALID
 };
@@ -39,3 +40,4 @@ public:
 };
 
 #endif
+
