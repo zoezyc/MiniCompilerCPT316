@@ -37,8 +37,10 @@ string Token::typeToString() const {
             return "OPERATOR";
         case TokenType::ASSIGNMENT: 
             return "ASSIGNMENT";
-        case TokenType::PARENTHESIS: 
-            return "PARENTHESIS";
+        case TokenType::PARENTHESIS_L: 
+            return "LEFT PARENTHESIS";
+        case TokenType::PARENTHESIS_R: 
+            return "RIGHT PARENTHESIS";
         case TokenType::TERMINATOR: 
             return "TERMINATOR";
         case TokenType::INVALID: 
@@ -51,3 +53,4 @@ string Token::typeToString() const {
 void Token::display() const {
     cout << "[" << typeToString() << "]: " << value << "(pos: " << position << ")" << endl;
 }
+
